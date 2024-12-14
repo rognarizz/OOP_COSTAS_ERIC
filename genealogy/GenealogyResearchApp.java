@@ -49,9 +49,13 @@ public class GenealogyResearchApp {
                     Person targetPerson = familyTree.getPerson(personName);
                     if (targetPerson != null) {
                         List<Person> children = targetPerson.getChildren();
-                        System.out.println(targetPerson.getName() + "'s children:");
-                        for (Person child : children) {
-                            System.out.println(child.getName());
+                        if (children.isEmpty()) {
+                            System.out.println(targetPerson.getName() + " has no children.");
+                        } else {
+                            System.out.println(targetPerson.getName() + "'s children:");
+                            for (Person child : children) {
+                                System.out.println(child.getName());
+                            }
                         }
                     } else {
                         System.out.println("Person not found.");
@@ -68,4 +72,3 @@ public class GenealogyResearchApp {
         }
     }
 }
-
